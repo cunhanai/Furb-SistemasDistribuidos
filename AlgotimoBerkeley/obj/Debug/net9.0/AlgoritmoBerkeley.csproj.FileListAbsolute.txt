@@ -1,0 +1,16 @@
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\nodes.txt
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\AlgoritmoBerkeley.exe
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\AlgoritmoBerkeley.deps.json
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\AlgoritmoBerkeley.runtimeconfig.json
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\AlgoritmoBerkeley.dll
+C:\Sistemas Distribuídos\AlgotimoBerkley\bin\Debug\net9.0\AlgoritmoBerkeley.pdb
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.AssemblyInfoInputs.cache
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.AssemblyInfo.cs
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.csproj.CoreCompileInputs.cache
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.sourcelink.json
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.dll
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\refint\AlgoritmoBerkeley.dll
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.pdb
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\AlgoritmoBerkeley.genruntimeconfig.cache
+C:\Sistemas Distribuídos\AlgotimoBerkley\obj\Debug\net9.0\ref\AlgoritmoBerkeley.dll

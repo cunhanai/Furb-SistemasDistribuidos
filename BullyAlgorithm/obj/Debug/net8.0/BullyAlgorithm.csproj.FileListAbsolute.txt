@@ -40,3 +40,4 @@ C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\refint\BullyAlgorithm.
 C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.pdb
 C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.genruntimeconfig.cache
 C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\ref\BullyAlgorithm.dll
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.sourcelink.json

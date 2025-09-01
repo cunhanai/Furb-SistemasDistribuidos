@@ -1,0 +1,30 @@
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.exe
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.deps.json
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.runtimeconfig.json
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.pdb
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.AssemblyInfoInputs.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.AssemblyInfo.cs
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.csproj.CoreCompileInputs.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\refint\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.pdb
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.genruntimeconfig.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\ref\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\nodes.txt
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.exe
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\nodes.txt
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.AssemblyInfoInputs.cache
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.AssemblyInfo.cs
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.csproj.CoreCompileInputs.cache
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\refint\AlgoritmoExclusaoMutuaCentralizado.dll
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.pdb
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.deps.json
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.runtimeconfig.json
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\bin\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.pdb
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\AlgoritmoExclusaoMutuaCentralizado.genruntimeconfig.cache
+C:\Sistemas Distribuídos\AlgoritmoExclusaoMutuaCentralizado\obj\Debug\net9.0\ref\AlgoritmoExclusaoMutuaCentralizado.dll
