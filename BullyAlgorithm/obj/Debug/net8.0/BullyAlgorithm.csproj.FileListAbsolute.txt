@@ -1,0 +1,42 @@
+C:\Workspace\PersonalProjects\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.exe
+C:\Workspace\PersonalProjects\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.deps.json
+C:\Workspace\PersonalProjects\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.runtimeconfig.json
+C:\Workspace\PersonalProjects\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.dll
+C:\Workspace\PersonalProjects\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.pdb
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfoInputs.cache
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfo.cs
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.csproj.CoreCompileInputs.cache
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.dll
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\refint\BullyAlgorithm.dll
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.pdb
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.genruntimeconfig.cache
+C:\Workspace\PersonalProjects\BullyAlgorithm\obj\Debug\net8.0\ref\BullyAlgorithm.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.exe
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.deps.json
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.runtimeconfig.json
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.pdb
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfoInputs.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfo.cs
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\refint\BullyAlgorithm.dll
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.pdb
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.genruntimeconfig.cache
+C:\Users\anaj2\OneDrive\Documentos\FURB\6 semestre\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\ref\BullyAlgorithm.dll
+C:\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.exe
+C:\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.deps.json
+C:\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.runtimeconfig.json
+C:\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.dll
+C:\Sistemas Distribuídos\BullyAlgorithm\bin\Debug\net8.0\BullyAlgorithm.pdb
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfoInputs.cache
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.AssemblyInfo.cs
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.csproj.CoreCompileInputs.cache
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.dll
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\refint\BullyAlgorithm.dll
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.pdb
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\BullyAlgorithm.genruntimeconfig.cache
+C:\Sistemas Distribuídos\BullyAlgorithm\obj\Debug\net8.0\ref\BullyAlgorithm.dll

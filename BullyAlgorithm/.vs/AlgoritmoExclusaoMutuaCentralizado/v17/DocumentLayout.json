@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Sistemas Distribu\u00EDdos\\BullyAlgorithm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98829A38-1C0A-4152-BE3C-D93F0C5BA781}|..\\AlgoritmoExclusaoMutuaCentralizado\\AlgoritmoExclusaoMutuaCentralizado.csproj|c:\\sistemas distribu\u00EDdos\\algoritmoexclusaomutuacentralizado\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98829A38-1C0A-4152-BE3C-D93F0C5BA781}|..\\AlgoritmoExclusaoMutuaCentralizado\\AlgoritmoExclusaoMutuaCentralizado.csproj|c:\\sistemas distribu\u00EDdos\\algoritmoexclusaomutuacentralizado\\processnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProcessNode.cs",
+              "DocumentMoniker": "C:\\Sistemas Distribu\u00EDdos\\AlgoritmoExclusaoMutuaCentralizado\\ProcessNode.cs",
+              "RelativeDocumentMoniker": "..\\AlgoritmoExclusaoMutuaCentralizado\\ProcessNode.cs",
+              "ToolTip": "C:\\Sistemas Distribu\u00EDdos\\AlgoritmoExclusaoMutuaCentralizado\\ProcessNode.cs",
+              "RelativeToolTip": "..\\AlgoritmoExclusaoMutuaCentralizado\\ProcessNode.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAjwK4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T22:47:45.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Sistemas Distribu\u00EDdos\\AlgoritmoExclusaoMutuaCentralizado\\Program.cs",
+              "RelativeDocumentMoniker": "..\\AlgoritmoExclusaoMutuaCentralizado\\Program.cs",
+              "ToolTip": "C:\\Sistemas Distribu\u00EDdos\\AlgoritmoExclusaoMutuaCentralizado\\Program.cs",
+              "RelativeToolTip": "..\\AlgoritmoExclusaoMutuaCentralizado\\Program.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwEcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T22:45:57.872Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
