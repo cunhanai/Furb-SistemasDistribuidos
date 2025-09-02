@@ -83,24 +83,15 @@ namespace AlgoritmoBerkeley
             {
             }
 
-            // master 3:00 diferença 0
-            // slave1 2:50 diferenca -10
-            // slave2 3:25 diferenca +25
+            var media = _syncNodes.Values.Sum(s => s!.Value) / (_syncNodes.Count + 1);
 
-            // (+25 - 10) / 3 = 5
-            var media = _syncNodes.Values.Sum(s => s!.Value) / (_syncNodes.Count + 1); // 5
+            HoraAtual = HoraAtual.AddTicks(media);
+            var minutos = TimeSpan.FromTicks(media).TotalMinutes;
 
-            // master 3:00 + 5 = 3:05
+            Console.WriteLine($"Atualizando hora em: {minutos} minutos | Hora Atual: {HoraAtual}");
 
             foreach (var node in _syncNodes)
             {
-                // slave1 -10 
-                // -10 * (-1) + 5 = 15
-
-                // slave2 + 25
-                // +25 * (-1) = -25
-                // -25 + 5 = -20
-
                 var atualizarTicks = node.Value * (-1) + media;
 
                 Send(node.Key, $"SYNC|{Id}|{atualizarTicks}");
@@ -162,7 +153,8 @@ namespace AlgoritmoBerkeley
         private void SlaveSincronizarHora(string[] parts)
         {
             var ticksSync = long.Parse(parts[2]);
-            Console.WriteLine($"[P{Id}] Deve sincronizar a hora em: {new DateTime(ticksSync)}");
+            var minutos = TimeSpan.FromTicks(ticksSync).TotalMinutes;
+            Console.WriteLine($"[P{Id}] Deve sincronizar a hora em: {minutos} minutos");
             HoraAtual = HoraAtual.AddTicks(ticksSync);
             Console.WriteLine($"[P{Id}] Nova hora: {HoraAtual}");
         }
@@ -170,8 +162,8 @@ namespace AlgoritmoBerkeley
         private void MasterProcessarHorasParaSincronizacao(string[] parts, int senderId)
         {
             var ticks = long.Parse(parts[2]);
-            var teste = TimeSpan.FromTicks(ticks).TotalMinutes;
-            Console.WriteLine($"[P{Id}] P{senderId} - Diferença de: {teste}");
+            var minutos = TimeSpan.FromTicks(ticks).TotalMinutes;
+            Console.WriteLine($"[P{Id}] P{senderId} - Diferença de: {minutos} minutos");
 
             _syncNodes[senderId] = ticks;
         }
