@@ -9,25 +9,28 @@ namespace AlgoritmoBerkeley
     {
         public int Id { get; private set; }
         public int Port { get; private set; }
-        public int CoordinatorId { get; private set; } = 0;
-        public bool IsAlive { get; private set; }
+        public int MasterId { get; private set; } = 0;
         public Dictionary<int, int> Nodes { get; set; }
+        public DateTime HoraAtual { get; set; }
 
         private UdpClient _udpClient;
         private Thread _listenThread;
-        private Thread _listenThreadCoordinatorAlive;
+        private Thread _listenThreadSync;
+        private Thread _listenThreadMasterAlive;
 
-        private List<int> _nodesSent = new();
+        private List<int> _nodesSentElection = [];
+        private Dictionary<int, long?> _syncNodes = [];
 
-        private bool? _coordVerified = null;
+        private bool? _masterVerified = null;
 
-        private bool isCoordinatorAlive = false;
+        private bool isMasterAlive = false;
 
-        public ProcessNode(int id, int port, Dictionary<int, int> nodes)
+        public ProcessNode(int id, int port, Dictionary<int, int> nodes, DateTime horaAtual)
         {
             Id = id;
             Port = port;
             Nodes = nodes;
+            HoraAtual = horaAtual;
         }
 
         public void Start()
@@ -36,34 +39,78 @@ namespace AlgoritmoBerkeley
             _listenThread = new Thread(ThreadProcess);
             _listenThread.Start();
 
-            Console.WriteLine($"[P{Id}] Escutando na porta {Port}");
-            VerifyCoordinator();
+            Console.WriteLine($"[P{Id}] Escutando na porta {Port} | Hora atual: {HoraAtual}");
+
+            while (true)
+            {
+                Console.Write("Comando (e = eleição, q = sair): ");
+
+                var cmd = Console.ReadLine();
+
+                if (cmd == "e")
+                    StartElection();
+                else if (cmd == "q")
+                    break;
+            }
         }
 
         private void InitThreads()
         {
-            _listenThreadCoordinatorAlive = new Thread(ThreadAlive);
-            _listenThreadCoordinatorAlive.Start();
+            _listenThreadMasterAlive = new Thread(ThreadAlive);
+            _listenThreadMasterAlive.Start();
         }
 
         private void ThreadAlive()
         {
             while (true)
             {
-                isCoordinatorAlive = false;
-                Send(CoordinatorId, $"ISALIVE|{Id}");
+                if (MasterId > 0)
+                {
+                    Task.Delay(60 * 1000).GetAwaiter().GetResult();
 
-                Task.Delay(5 * 1000).GetAwaiter().GetResult();
+                    isMasterAlive = false;
+                    Send(MasterId, $"ISALIVE|{Id}");
 
-                if (!isCoordinatorAlive)
-                    StartElection();
+                    if (MasterId > 0 && !isMasterAlive)
+                        StartElection();
+                }
             }
+        }
+
+        private void ThreadSync()
+        {
+            while (_syncNodes.Count <= 0 || (_syncNodes.Count > 0 && _syncNodes.ContainsValue(null)))
+            {
+            }
+
+            // master 3:00 diferença 0
+            // slave1 2:50 diferenca -10
+            // slave2 3:25 diferenca +25
+
+            // (+25 - 10) / 3 = 5
+            var media = _syncNodes.Values.Sum(s => s!.Value) / (_syncNodes.Count + 1); // 5
+
+            // master 3:00 + 5 = 3:05
+
+            foreach (var node in _syncNodes)
+            {
+                // slave1 -10 
+                // -10 * (-1) + 5 = 15
+
+                // slave2 + 25
+                // +25 * (-1) = -25
+                // -25 + 5 = -20
+
+                var atualizarTicks = node.Value * (-1) + media;
+
+                Send(node.Key, $"SYNC|{Id}|{atualizarTicks}");
+            }
+
+            _syncNodes.Clear();
         }
 
         private void ThreadProcess()
         {
-            IsAlive = true;
-
             while (true)
             {
                 IPEndPoint remote = null;
@@ -79,60 +126,135 @@ namespace AlgoritmoBerkeley
                 switch (type)
                 {
                     case "ELECTION":
-                        Console.WriteLine($"[P{Id}] Recebeu eleição de P{senderId}.");
-
-                        if (Id > senderId)
-                        {
-                            Send(senderId, $"OK|{Id}");
-                            StartElection();
-                        }
+                        ProcessarInicioEleicao(senderId);
                         break;
                     case "ISALIVE":
-                        Send(senderId, $"ALIVE|{Id}");
+                        MasterInformarVivo(senderId);
                         break;
                     case "ALIVE":
-                        isCoordinatorAlive = true;
+                        SlaveRegistrarMasterVivo();
                         break;
                     case "OK":
-                        Console.WriteLine($"[P{Id}] Recebeu OK de P{senderId}.");
-                        _nodesSent.Remove(senderId);
+                        ReceberOkEleicao(senderId);
                         break;
-                    case "COORDINATOR":
-                        CoordinatorId = senderId;
-                        Console.WriteLine($"[P{Id}] Novo coordenador é P{senderId}.");
+                    case "MASTER":
+                        SlavesDefinindoMaster(senderId);
                         break;
                     case "VERIFY":
-                        Console.WriteLine($"[P{Id}] Recebeu sinal de P{senderId} para informar o coordenador.");
-                        Send(senderId, $"INFORM|{CoordinatorId}");
+                        EnviandoIdDoMaster(senderId);
                         break;
                     case "INFORM":
-                        CoordinatorId = int.Parse(parts[1]);
-                        _coordVerified = true;
-                        Console.WriteLine($"Coordenador atual: {CoordinatorId}");
-                        InitThreads();
+                        SlaveRecebendoMasterAtual(parts);
+                        break;
+                    case "SYNCINF":
+                        SlaveInformarHoraParaSincronizacao(parts, senderId);
+                        break;
+                    case "SYNCOUT":
+                        MasterProcessarHorasParaSincronizacao(parts, senderId);
+                        break;
+                    case "SYNC":
+                        SlaveSincronizarHora(parts);
                         break;
                 }
             }
         }
 
-        public void VerifyCoordinator()
+        private void SlaveSincronizarHora(string[] parts)
         {
-            Console.WriteLine($"[P{Id}] Verificando Coordenador...");
+            var ticksSync = long.Parse(parts[2]);
+            Console.WriteLine($"[P{Id}] Deve sincronizar a hora em: {new DateTime(ticksSync)}");
+            HoraAtual = HoraAtual.AddTicks(ticksSync);
+            Console.WriteLine($"[P{Id}] Nova hora: {HoraAtual}");
+        }
+
+        private void MasterProcessarHorasParaSincronizacao(string[] parts, int senderId)
+        {
+            var ticks = long.Parse(parts[2]);
+            var teste = TimeSpan.FromTicks(ticks).TotalMinutes;
+            Console.WriteLine($"[P{Id}] P{senderId} - Diferença de: {teste}");
+
+            _syncNodes[senderId] = ticks;
+        }
+
+        private void SlaveInformarHoraParaSincronizacao(string[] parts, int senderId)
+        {
+            var dateTime = DateTime.FromFileTimeUtc(long.Parse(parts[2]));
+            Console.WriteLine($"[P{Id}] Recebeu solicitaçãod e P{senderId} para informar a hora");
+
+            var diferenca = HoraAtual - dateTime;
+            Send(senderId, $"SYNCOUT|{Id}|{diferenca.Ticks}");
+        }
+
+        private void SlaveRecebendoMasterAtual(string[] parts)
+        {
+            MasterId = int.Parse(parts[1]);
+            _masterVerified = true;
+
+            Console.WriteLine($"Master atual: {(MasterId > 0 ? MasterId : "Sem master definido")}");
+
+            if (MasterId <= 0)
+                StartElection();
+
+            InitThreads();
+        }
+
+        private void EnviandoIdDoMaster(int senderId)
+        {
+            Console.WriteLine($"[P{Id}] Recebeu sinal de P{senderId} para informar o master.");
+            Send(senderId, $"INFORM|{MasterId}");
+        }
+
+        private void SlavesDefinindoMaster(int senderId)
+        {
+            MasterId = senderId;
+            Console.WriteLine($"[P{Id}] Novo master é P{senderId}.");
+        }
+
+        private void ReceberOkEleicao(int senderId)
+        {
+            Console.WriteLine($"[P{Id}] Recebeu OK de P{senderId}.");
+            _nodesSentElection.Remove(senderId);
+        }
+
+        private void SlaveRegistrarMasterVivo()
+        {
+            isMasterAlive = true;
+        }
+
+        private void MasterInformarVivo(int senderId)
+        {
+            Send(senderId, $"ALIVE|{Id}");
+        }
+
+        private void ProcessarInicioEleicao(int senderId)
+        {
+            Console.WriteLine($"[P{Id}] Recebeu eleição de P{senderId}.");
+
+            if (Id > senderId)
+            {
+                Send(senderId, $"OK|{Id}");
+                StartElection();
+            }
+        }
+
+        public void VerifyWhoIsMaster()
+        {
+            Console.WriteLine($"[P{Id}] Verificando Master...");
 
             var nodes = Nodes.Where(w => w.Key != Id).ToList();
 
             if (nodes.Count == 0)
-                AnnounceCoordinator();
+                AnnounceMaster();
 
             foreach (var node in nodes)
             {
-                _coordVerified = false;
-                Console.WriteLine("Perguntando quem é o coordenador...");
+                _masterVerified = false;
+                Console.WriteLine("Perguntando quem é o master...");
                 Send(node.Key, $"VERIFY|{Id}");
 
                 var waitingTask = Task.Run(() =>
                 {
-                    while (_coordVerified.HasValue && _coordVerified.Value)
+                    while (_masterVerified.HasValue && _masterVerified.Value)
                     {
 
                     }
@@ -144,7 +266,7 @@ namespace AlgoritmoBerkeley
 
                 var result = waitingTask.Result;
 
-                _coordVerified = null;
+                _masterVerified = null;
             }
 
         }
@@ -169,11 +291,11 @@ namespace AlgoritmoBerkeley
 
             var higherNodes = Nodes.Where(item => item.Key > Id);
 
-            _nodesSent = [.. higherNodes.ToDictionary().Keys];
+            _nodesSentElection = [.. higherNodes.ToDictionary().Keys];
 
             if (!higherNodes.Any())
             {
-                AnnounceCoordinator();
+                AnnounceMaster();
                 return;
             }
 
@@ -182,7 +304,7 @@ namespace AlgoritmoBerkeley
 
             var waitingTask = Task.Run(() =>
             {
-                while (_nodesSent.Count != 0)
+                while (_nodesSentElection.Count != 0)
                 {
 
                 }
@@ -195,34 +317,34 @@ namespace AlgoritmoBerkeley
             var result = waitingTask.Result;
         }
 
-        private void AnnounceCoordinator()
+        private void AnnounceMaster()
         {
-            CoordinatorId = Id;
+            MasterId = Id;
 
+            _syncNodes.Clear();
             foreach (var node in Nodes.Keys.Where(key => key != Id))
-                Send(node, $"COORDINATOR|{Id}");
-
-            Console.WriteLine($"[P{Id}] Eu sou o novo coordenador!");
-
-            _ = Task.Run(async () =>
             {
-                await Task.Delay(1 * 60 * 1000);
-                Process.GetCurrentProcess().Kill();
-            });
+                Send(node, $"MASTER|{Id}");
+
+                Console.WriteLine($"Iniciando sincronização das horas com o P{node}");
+                _syncNodes.Add(node, null);
+                Send(node, $"SYNCINF|{Id}|{HoraAtual.ToFileTimeUtc()}");
+            }
+
+            _listenThreadSync = new Thread(ThreadSync);
+            _listenThreadSync.Start();
+
+            Console.WriteLine($"[P{Id}] Eu sou o novo master!");
         }
 
         private void Send(int targetId, string message)
         {
-            if (!Nodes.ContainsKey(targetId))
+            if (!Nodes.TryGetValue(targetId, out int targetPort))
                 return;
 
-            int targetPort = Nodes[targetId];
-
-            using (UdpClient client = new UdpClient())
-            {
-                byte[] data = Encoding.UTF8.GetBytes(message);
-                client.Send(data, data.Length, "127.0.0.1", targetPort);
-            }
+            using UdpClient client = new();
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            client.Send(data, data.Length, "127.0.0.1", targetPort);
         }
     }
 }
