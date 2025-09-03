@@ -131,3 +131,13 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+/AlgotimoBerkeley/obj/Debug/net9.0/AlgoritmoBerkeley.AssemblyInfo.cs
+/AlgotimoBerkeley/obj/Debug/net9.0/AlgoritmoBerkeley.assets.cache
+/AlgotimoBerkeley/obj/Debug/net9.0/AlgoritmoBerkeley.AssemblyInfoInputs.cache
+/AlgotimoBerkeley/obj/Debug/net9.0/AlgoritmoBerkeley.GeneratedMSBuildEditorConfig.editorconfig
+/AlgotimoBerkeley/obj/project.assets.json
+/AlgotimoBerkeley/obj/project.nuget.cache
+/AlgotimoBerkeley/obj/AlgoritmoBerkeley.csproj.nuget.dgspec.json
+/AlgotimoBerkeley/.vs/AlgoritmoBerkeley/v17/DocumentLayout.json
+/AlgotimoBerkeley/.vs/AlgoritmoBerkeley/v17/DocumentLayout.backup.json
+/AlgotimoBerkeley/.vs/AlgoritmoBerkeley/v17/.suo
